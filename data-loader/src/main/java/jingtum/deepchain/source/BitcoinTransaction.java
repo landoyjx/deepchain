@@ -16,76 +16,76 @@ import java.util.ArrayList;
 
 public class BitcoinTransaction implements Writable {
 
-	
-private int version;
-private byte[] inCounter;
-private byte[] outCounter;
-private List<BitcoinTransactionInput> listOfInputs;
-private List<BitcoinTransactionOutput> listOfOutputs;
-private int lockTime;
 
-public BitcoinTransaction() {
-	this.version=0;
-	this.inCounter=new byte[0];
-	this.outCounter=new byte[0];
-	this.listOfInputs=new ArrayList<BitcoinTransactionInput>();
-	this.listOfOutputs=new ArrayList<BitcoinTransactionOutput>();
-	this.lockTime=0;
-}
+    private int version;
+    private byte[] inCounter;
+    private byte[] outCounter;
+    private List<BitcoinTransactionInput> listOfInputs;
+    private List<BitcoinTransactionOutput> listOfOutputs;
+    private int lockTime;
 
-public BitcoinTransaction(int version, byte[] inCounter, List<BitcoinTransactionInput> listOfInputs, byte[] outCounter, List<BitcoinTransactionOutput> listOfOutputs, int lockTime) {
-	this.version=version;
-	this.inCounter=inCounter;
-	this.listOfInputs=listOfInputs;
-	this.outCounter=outCounter;
-	this.listOfOutputs=listOfOutputs;
-	this.lockTime=lockTime;
-}
+    public BitcoinTransaction() {
+        this.version = 0;
+        this.inCounter = new byte[0];
+        this.outCounter = new byte[0];
+        this.listOfInputs = new ArrayList<BitcoinTransactionInput>();
+        this.listOfOutputs = new ArrayList<BitcoinTransactionOutput>();
+        this.lockTime = 0;
+    }
 
-public int getVersion() {
-	return this.version;
-}
+    public BitcoinTransaction(int version, byte[] inCounter, List<BitcoinTransactionInput> listOfInputs, byte[] outCounter, List<BitcoinTransactionOutput> listOfOutputs, int lockTime) {
+        this.version = version;
+        this.inCounter = inCounter;
+        this.listOfInputs = listOfInputs;
+        this.outCounter = outCounter;
+        this.listOfOutputs = listOfOutputs;
+        this.lockTime = lockTime;
+    }
 
-public byte[] getInCounter() {
-	return this.inCounter;
-}
+    public int getVersion() {
+        return this.version;
+    }
 
-public List<BitcoinTransactionInput> getListOfInputs() {
-	return this.listOfInputs;
-}
+    public byte[] getInCounter() {
+        return this.inCounter;
+    }
 
-public byte[] getOutCounter() {
-	return this.outCounter;
-}
+    public List<BitcoinTransactionInput> getListOfInputs() {
+        return this.listOfInputs;
+    }
 
-public List<BitcoinTransactionOutput> getListOfOutputs() {
-	return this.listOfOutputs;
-}
+    public byte[] getOutCounter() {
+        return this.outCounter;
+    }
 
-public int getLockTime() {
-	return this.lockTime;
-}
+    public List<BitcoinTransactionOutput> getListOfOutputs() {
+        return this.listOfOutputs;
+    }
 
-public void set(BitcoinTransaction newTransaction) {
-	this.version=newTransaction.getVersion();
-	this.inCounter=newTransaction.getInCounter();
-	this.listOfInputs=newTransaction.getListOfInputs();
-	this.outCounter=newTransaction.getOutCounter();
-	this.listOfOutputs=newTransaction.getListOfOutputs();
-	this.lockTime=newTransaction.getLockTime();
-	
-}
+    public int getLockTime() {
+        return this.lockTime;
+    }
 
-/** Writable **/
+    public void set(BitcoinTransaction newTransaction) {
+        this.version = newTransaction.getVersion();
+        this.inCounter = newTransaction.getInCounter();
+        this.listOfInputs = newTransaction.getListOfInputs();
+        this.outCounter = newTransaction.getOutCounter();
+        this.listOfOutputs = newTransaction.getListOfOutputs();
+        this.lockTime = newTransaction.getLockTime();
 
-  @Override
-  public void write(DataOutput dataOutput) throws IOException {
-    throw new UnsupportedOperationException("write unsupported");
-  }
+    }
 
-  @Override
-  public void readFields(DataInput dataInput) throws IOException {
-    throw new UnsupportedOperationException("readFields unsupported");
-  }
+    /**
+     * Writable
+     **/
+
+    public void write(DataOutput dataOutput) throws IOException {
+        throw new UnsupportedOperationException("write unsupported");
+    }
+
+    public void readFields(DataInput dataInput) throws IOException {
+        throw new UnsupportedOperationException("readFields unsupported");
+    }
 
 }

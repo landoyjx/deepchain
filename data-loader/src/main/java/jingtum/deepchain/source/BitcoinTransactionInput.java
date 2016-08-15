@@ -19,11 +19,11 @@ public class BitcoinTransactionInput implements Serializable {
     private long seqNo;
 
     public BitcoinTransactionInput(byte[] prevTransactionHash, long previousTxOutIndex, byte[] txInScriptLength, byte[] txInScript, long seqNo) {
-        this.prevTransactionHash=prevTransactionHash;
-        this.previousTxOutIndex=previousTxOutIndex;
-        this.txInScriptLength=txInScriptLength;
-        this.txInScript=txInScript;
-        this.seqNo=seqNo;
+        this.prevTransactionHash = prevTransactionHash;
+        this.previousTxOutIndex = previousTxOutIndex;
+        this.txInScriptLength = txInScriptLength;
+        this.txInScript = txInScript;
+        this.seqNo = seqNo;
     }
 
     public byte[] getPrevTransactionHash() {

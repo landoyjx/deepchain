@@ -17,9 +17,9 @@ public class BitcoinTransactionOutput implements Serializable {
     private byte[] txOutScript;
 
     public BitcoinTransactionOutput(long value, byte[] txOutScriptLength, byte[] txOutScript) {
-        this.value=value;
-        this.txOutScriptLength=txOutScriptLength;
-        this.txOutScript=txOutScript;
+        this.value = value;
+        this.txOutScriptLength = txOutScriptLength;
+        this.txOutScript = txOutScript;
     }
 
     public long getValue() {
